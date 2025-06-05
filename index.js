@@ -6,6 +6,12 @@ app.use(express.json());
 
 let ingestionCounter = 0;
 
+app.set("views engine",ejs);
+
+app.get("/",(req,res)=>{
+    res.render("index");
+})
+
 app.post('/ingest', (req, res) => {
   const ids = req.body.ids;
   if (!ids || ids.length == 0) {
