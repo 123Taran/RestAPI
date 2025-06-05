@@ -6,10 +6,9 @@ app.use(express.json());
 
 let ingestionCounter = 0;
 
-app.set("views engine",ejs);
 
 app.get("/",(req,res)=>{
-    res.render("index");
+    res.send("Home page");
 })
 
 app.post('/ingest', (req, res) => {
